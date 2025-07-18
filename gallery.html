@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Visual Explorer Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="gallery-page">
+    <nav class="main-nav">
+        <div class="logo">Visual<span>Explorer</span>Pro</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="themes.html">Themes</a>
+            <a href="premium.html" class="premium-link">Go Premium</a>
+        </div>
+    </nav>
+    
+    <div class="gallery-container">
+        <div class="gallery-header">
+            <h1>Premium  Collection</h1>
+            <p>Explore our exclusive  photography from around the world</p>
+            
+            <div class="search-bar">
+                <input type="text" id="gallery-search" placeholder="Search mammals, reptiles, wildlife...">
+                <button id="gallery-search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        
+        <!-- Filter Controls -->
+        <div class="filter-controls">
+              <button class="filter-btn active" data-filter="all">All Animals</button>
+            <button class="filter-btn" data-filter="mammals">Mammals</button>
+            <button class="filter-btn" data-filter="birds">Birds</button>
+            <button class="filter-btn" data-filter="reptiles">Reptiles</button>
+            <button class="filter-btn" data-filter="marine">Marine Life</button>
+            <button class="filter-btn" data-filter="insects">Insects</button>
+            <button class="filter-btn premium-filter" data-filter="endangered">Endangered <i class="fas fa-crown"></i></button>
+            <button class="filter-btn premium-filter" data-filter="rare">Rare Species <i class="fas fa-crown"></i></button>
+        </div>
+        
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+            <!-- Images will be added here by JavaScript -->
+        </div>
+        
+        <!-- Premium Banner -->
+        <div class="premium-banner">
+            <div class="premium-content">
+                <h2>Unlock Our Full Wildlife Collection</h2>
+                <p>Get access to 10,000+ premium animal photos, 4K resolution downloads, and expert-curated collections</p>
+                <a href="premium.html" class="premium-btn">Upgrade to Premium <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        
+        <!-- Lightbox Modal -->
+        <div class="lightbox" id="lightbox">
+            <span class="close-btn">&times;</span>
+            <div class="lightbox-content">
+                <img id="lightbox-img" src="" alt="">
+                <div class="lightbox-nav">
+                    <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="image-info">
+                    <h3 id="image-title"></h3>
+                    <div class="image-meta">
+                        <span id="image-species"></span>
+                        <span id="image-location"></span>
+                        <span id="image-category"></span>
+                    </div>
+                    <p id="image-desc"></p>
+                    <div class="image-actions">
+                        <a href="#" id="learn-more" class="learn-more-btn" target="_blank"><i class="fas fa-book-open"></i> Learn More</a>
+                        <button class="download-btn premium-download"><i class="fas fa-download"></i> Download (Premium)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Explorer Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="landing-page">
+    <nav class="main-nav">
+    <div class="nav-container">
+        <div class="logo">Visual<span>Explorer</span>Pro</div>
+        <div class="nav-links">
+            <a href="themes.html">Themes</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="premium.html" class="premium-link">Go Premium</a>
+        </div>
+    </div>
+</nav>
+    
+        <div class="hero-content">
+            <h1>Discover the World Through Stunning Imagery</h1>
+            <p>Explore thousands of high-quality images across multiple categories and themes</p>
+            
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for mammals, reptiles, wildlife...">
+                    <button id="search-btn"><i class="fas fa-search"></i> Explore</button>
+                </div>
+                <div class="search-suggestions">
+                    <span>Popular: </span>
+                    <button class="suggestion-btn" data-term="Mammals">Mammals</button>
+                    <button class="suggestion-btn" data-term="Reptiles">Reptiles</button>
+                    <button class="suggestion-btn" data-term="Birds">Birds</button>
+                    <button class="suggestion-btn" data-term="Marine Life">Marine Life</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

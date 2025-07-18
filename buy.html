@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Premium Content</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .purchase-container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 2rem auto;
+            color: white;
+        }
+        
+        .package-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 4px;
+            border: none;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .btn-checkout {
+            background: #e67e22;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: block;
+            width: 100%;
+        }
+        
+        .btn-checkout:hover {
+            background: #d35400;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="content">
+        <header>
+            <h1>Complete Your Purchase</h1>
+            <nav>
+                <a href="index.html">Home</a> |
+                <a href="premium.html">Back to Premium</a>
+            </nav>
+        </header>
+
+        <div class="purchase-container">
+            <div class="package-info" id="package-info">
+                <!-- Package info will be filled by JavaScript -->
+            </div>
+            
+            <h2>Payment Information</h2>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="card">Credit Card Number</label>
+                    <input type="text" id="card" placeholder="1234 5678 9012 3456" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group" style="flex: 1; margin-right: 1rem;">
+                        <label for="expiry">Expiry Date</label>
+                        <input type="text" id="expiry" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label for="cvc">CVC</label>
+                        <input type="text" id="cvc" placeholder="123" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-checkout">Complete Purchase</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Image Gallery. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get package from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const package = urlParams.get('package');
+        
+        // Display package info
+        const packageInfo = document.getElementById('package-info');
+        
+        if (package === 'starter') {
+            packageInfo.innerHTML = `
+                <h2>Starter Pack</h2>
+                <p><strong>Price: $9.99</strong></p>
+                <ul>
+                    <li>50 High-Res Images</li>
+                    <li>3 Exclusive Themes</li>
+                    <li>Commercial License</li>
+                </ul>
+            `;
+        } else if (package === 'professional') {
+            packageInfo.innerHTML = `
+                <h2>Professional Pack</h2>
+                <p><strong>Price: $24.99</strong></p>
+                <ul>
+                    <li>200 High-Res Images</li>
+                    <li>10 Exclusive Themes</li>
+                    <li>Extended License</li>
+                    <li>Priority Support</li>
+                </ul>
+            `;
+        } else if (package === 'ultimate') {
+            packageInfo.innerHTML = `
+                <h2>Ultimate Pack</h2>
+                <p><strong>Price: $49.99</strong></p>
+                <ul>
+                    <li>500+ High-Res Images</li>
+                    <li>All Themes & Categories</li>
+                    <li>Unlimited License</li>
+                    <li>24/7 Support</li>
+                    <li>Future Updates</li>
+                </ul>
+            `;
+        } else {
+            packageInfo.innerHTML = `<h2>Select a Package</h2><p>Please return to the <a href="premium.html">premium page</a> to select a package.</p>`;
+        }
+        
+        // Simple form validation
+        document.getElementById('payment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your purchase! You will receive an email with your download links shortly.');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
